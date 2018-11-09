@@ -14,6 +14,6 @@ write-host "Executing git commands..."
 git config --global user.email "#{GitUserEmail}#"
 git config --global user.name "#{GitUserName}#"
 
-git add .
+git add *.xml
 git commit -m '#{Build.BuildNumber}#'
 git push -u origin HEAD:master
