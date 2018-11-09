@@ -11,9 +11,9 @@ foreach ($facility in $json) {
 }
 
 write-host "Executing git commands..."
-git config --global user.email "rob@rorpage.com"
-git config --global user.name "Robbie Page"
+git config --global user.email "#{GitUserEmail}#"
+git config --global user.name "#{GitUserName}#"
 
 git add .
-git commit -m 'master_2018.11.9.15'
+git commit -m '#{Build.BuildNumber}#'
 git push -u origin HEAD:master
