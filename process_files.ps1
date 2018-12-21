@@ -4,7 +4,7 @@ foreach ($facility in $json) {
   write-host "Processing $($facility.name) ($($facility.id))..."
   try {
     $url = "https://wdwntnowapi.azurewebsites.net/api/v2/facilities/getparkxmlobjects/$($facility.id).xml"
-    Invoke-RestMethod -Uri $url -TimeoutSec 300 -OutFile "$($facility.id).xml"
+    Invoke-RestMethod -Uri $url -TimeoutSec 600 -OutFile "$($facility.id).xml"
   } catch {
     write-host "Error: $_.Exception.Message"
   }
